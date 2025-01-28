@@ -195,7 +195,7 @@ function detectCollision(a, b) {
 function toggleDarkMode() {
     // Toggle between light and dark mode image sources
     if (db === "images/flappybird.png") {
-        db = "images/lbg.png";
+        db = "images/bird.png";
         dtp = "images/ltp.png";
         dbp = "images/lbp.png";
     } else {
