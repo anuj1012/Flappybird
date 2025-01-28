@@ -1,0 +1,27 @@
+body{
+    background: #d4c6c6bb;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+#board{
+    /* text-align: center;
+    background-color:skyblue; */
+    border: solid 3px rgb(30, 30, 30);
+    border-radius:5px;
+    background-image: url('images/Nbg.png');
+}
+#header{
+    color:#6a1c1cbb;
+    justify-content: center;
+    text-align: center;
+    font-size: 45px;
+}
+.footer{
+    margin:20px;
+}
+.mode{
+    font-size: large;
+    border: none;
+    /* border-radius: 50%; */
+    cursor: pointer;
+}
