@@ -58,6 +58,7 @@ window.onload = function () {
     setInterval(placePipes, 1500); //every 1.5 seconds
     document.addEventListener("keydown", moveBird);
     board.addEventListener("touchstart", handleTouchStart); // Add touch control
+    board.addEventListener("touchend", handleTouchEnd); // Add touch control
 
     // Display initial high score
     document.getElementsByClassName('highScore')[0].innerHTML = `High Score => ${highScore}`;
@@ -170,6 +171,7 @@ function placePipes() {
 function moveBird(e) {
     // Ensure the bird moves only for specific keys or touch events
     if (e.type === "keydown" && (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") || e.type === "touchstart") {
+        console.log("Bird flying!");
         //jump
         velocityY = -6;
 
@@ -186,7 +188,14 @@ function moveBird(e) {
 function handleTouchStart(e) {
     // Prevent the default behavior for touch events
     e.preventDefault();
+    console.log("Touch start detected");
     moveBird({ type: "touchstart" });
+}
+
+function handleTouchEnd(e) {
+    // Prevent the default behavior for touch events
+    e.preventDefault();
+    console.log("Touch end detected");
 }
 
 function detectCollision(a, b) {
