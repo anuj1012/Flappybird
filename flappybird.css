@@ -25,3 +25,11 @@ body{
     /* border-radius: 50%; */
     cursor: pointer;
 }
+#darkModeToggle{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    border: none;
+    background: #676262;
+    color:aliceblue;
+    cursor: pointer;
+}
