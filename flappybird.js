@@ -8,7 +8,7 @@ let dbp = "images/bottompipe.png";
 
 // Board setup
 let board;
-let boardWidth = 460;
+let boardWidth = 360;
 let boardHeight = 640;
 let context;
 
@@ -57,7 +57,7 @@ window.onload = function () {
     requestAnimationFrame(update);
     setInterval(placePipes, 1500); //every 1.5 seconds
     document.addEventListener("keydown", moveBird);
-    board.addEventListener("touchstart", moveBird); // Add touch control
+    board.addEventListener("touchstart", handleTouchStart); // Add touch control
 
     // Display initial high score
     document.getElementsByClassName('highScore')[0].innerHTML = `High Score => ${highScore}`;
@@ -183,6 +183,12 @@ function moveBird(e) {
     }
 }
 
+function handleTouchStart(e) {
+    // Prevent the default behavior for touch events
+    e.preventDefault();
+    moveBird({ type: "touchstart" });
+}
+
 function detectCollision(a, b) {
     return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
         a.x + a.width > b.x &&   //a's top right corner passes b's top left corner
@@ -193,7 +199,7 @@ function detectCollision(a, b) {
 function toggleDarkMode() {
     // Toggle between light and dark mode image sources
     if (db === "images/flappybird.png") {
-        db = "images/bird.png";
+        db = "images/lbg.png";
         dtp = "images/ltp.png";
         dbp = "images/lbp.png";
     } else {
